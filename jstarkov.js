@@ -40,7 +40,9 @@ $('.quests').html(HTML);
 
 //build collectibles table
 var HTML = '';
-HTML += "<tr><th>Item name (<span class='glyphicon glyphicon-ok'></span> FIR | <span class='glyphicon glyphicon-cog'></span> CanBeCrafted | <span class='glyphicon glyphicon-refresh'></span> Barter)</th><th>Amount to Collect</th><th>Inventory</th><th>Handed In</th><th>Remaining</th></tr>";
+HTML += "<tr style='font-align: center;'><th style='width: 350px;'>Item name (<span class='glyphicon glyphicon-ok'></span> FIR | "
++ "<span class='glyphicon glyphicon-cog'></span> CanBeCrafted | <span class='glyphicon glyphicon-refresh'></span> Barter)</th>"
++ "<th style='width: 20px;'>Need</th><th style='width: 110px;'>Stashed</th><th style='width: 110px;'>Handed In</th><th  style='width: 180px;'>Remaining</th></tr>";
 trid=1;
 for (const key in items){
   const element = items[key];
@@ -79,7 +81,8 @@ for (const key in items){
     questId = element.quests;
   if(options.show_quests == true){
     for(var key2 in questId){
-      HTML += `<tr ` + background+`><td><span style='margin-left:120px;'>` + csv[key2][1] + `</span><td>` + questId[key2]+ `</td></td>`
+      HTML += `<tr ` + background+
+      `><td><span style='margin-left:120px;'><a href='https://escapefromtarkov.gamepedia.com/`+ csv[key2][1] +  `'>` + csv[key2][1] + `</a></span><td>` + questId[key2]+ `</td></td>`
         + `<td></td>`
         + `<td></td>`
         + `<td><button type='button' class='btn btn-success btn-sm' id='completebutton_`+key2.replace(/ /g, "_")
@@ -97,24 +100,24 @@ $('.itemstocollect').html(HTML);
 
 //input field for inventory
 function haveinInvInput(key){
-  return `<div class='input-group' style='width: 80px; text-align: center;'>
+  return `<div class='input-group' style='text-align: center;'>
   <div class='input-group-btn'>
     <!-- Buttons -->
   </div>
-  <input type="number" id="haveinInv_`
+  <input type="number" style='width: 100px;' id="haveinInv_`
    + key.replace(/ /g, "_")
-   +`" name="haveInInv" step="1" min="0" value="` 
+   +`" name="haveInInv" step="1" size="8" min="0" value="` 
    + items[key].ininventory
    +`" onChange="javascript:updateItemCount('`+ key.replace(/ /g, "_")+`');"></div>`;
 }
 
 //input field for handed in 
 function handedInInput(key){
-  return `<div class='input-group' style='width: 80px; text-align: center;'>
+  return `<div class='input-group' style='text-align: center;'>
   <div class='input-group-btn'>
     <!-- Buttons -->
   </div>
-  <input type="number" id="handedIn_` + key.replace(/ /g, "_") 
+  <input type="number" style='width: 100px;' size="8" id="handedIn_` + key.replace(/ /g, "_") 
   +`"  name="handedIn" step="1" min="0" value="` + items[key].handedin 
   + `" onChange="javascript:updateItemCount('`+ key.replace(/ /g, "_") +`');">
 </div>`;
@@ -199,7 +202,7 @@ for (let index = 0; index < decreaselist.length; index++) {
     items[item].remaining -= amount;
   }
 
-  
+
 
 
 
