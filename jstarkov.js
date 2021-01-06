@@ -48,7 +48,7 @@ trid=1;
 for (const key in items){
   const element = items[key];
 
-  if(element.remaining > 1 || options.show_0_remaining == true){
+  if(element.remaining >= 1 || options.show_0_remaining == true){
 
 
   if(element.remaining <= 0){
