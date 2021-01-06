@@ -24,10 +24,7 @@ function init(){
   }else{
     $('#show_0_remaining').removeAttr('checked',false);
   }
-
-
 }
-
 init();
 
 
@@ -69,10 +66,11 @@ for (const key in items){
       if(element.crafted == true){
         icon += '<span class="glyphicon glyphicon-cog" style="margin-left:10px;"></span>';
       }
+
     HTML += "<tr " + background + "><td>"
     + "<a href='https://escapefromtarkov.gamepedia.com/" + key + "'>" +key + "</a>" + icon 
-    + "</span></td><td><span id='tocollect_" + key.replace(/ /g, "_") 
-    + "' data='"+key.replace(/ /g, "_")+"'>" + element.remaining + "</span></td>" 
+    + "</span></td><td><span id='tocollect_" + key.replace(/ /g, "_")+"'>"
+    + element.amount + "</span></td>" 
     + "<td>" + haveinInvInput(key) + "</td>"
     + "<td>" + handedInInput(key) + "</td>"
     + "</td><td><span id='remaining_" + key.replace(/ /g, "_") + "'>"+ element.remaining +"</span></td></tr>";
@@ -105,7 +103,9 @@ function haveinInvInput(key){
   </div>
   <input type="number" id="haveinInv_`
    + key.replace(/ /g, "_")
-   +`" name="haveInInv" step="1" min="0" value="` + items[key].ininventory+`" onChange="javascript:calculateRemaining('`+ key.replace(/ /g, "_")+`');"></div>`;
+   +`" name="haveInInv" step="1" min="0" value="` 
+   + items[key].ininventory
+   +`" onChange="javascript:updateItemCount('`+ key.replace(/ /g, "_")+`');"></div>`;
 }
 
 //input field for handed in 
@@ -114,35 +114,45 @@ function handedInInput(key){
   <div class='input-group-btn'>
     <!-- Buttons -->
   </div>
-  <input type="number" id="handedIn_` + key.replace(/ /g, "_") +`"  name="handedIn" step="1" min="0" value="` + items[key].handedin + `" onChange="javascript:calculateRemaining('`+ key.replace(/ /g, "_") +`');">
+  <input type="number" id="handedIn_` + key.replace(/ /g, "_") 
+  +`"  name="handedIn" step="1" min="0" value="` + items[key].handedin 
+  + `" onChange="javascript:updateItemCount('`+ key.replace(/ /g, "_") +`');">
 </div>`;
+}
+
+function updateItemCount(id){
+  itemid = id.replace(/_/g, " ");
+  console.log(id);
+  console.log(items[itemid]);
+
+  id_handedin  = "#handedIn_" + id;
+  handedin = $(id_handedin).val();
+
+  id_haveininv = "#haveinInv_" + id;
+  haveininv = $(id_haveininv).val();
+
+  console.log(handedin);
+  console.log(haveininv);
+
+  items[itemid].handedin = Number(handedin);
+  items[itemid].ininventory = Number(haveininv);
+  items[itemid].remaining = Number(items[itemid].amount - (items[itemid].handedin + items[itemid].ininventory));
+  id_remaining = "#remaining_" + id;
+  $(id_remaining).text(items[itemid].remaining);
+  calculateRemaining(itemid);
 }
 
 
 //calculate remaining amount based in the tables data
-function calculateRemaining(id){
-  
-   id_tocollect = "#tocollect_" + id;
-   console.log(id_tocollect);
-   tocollect = Number($(id_tocollect).text());
+  function calculateRemaining(id){
+    console.log(items[id]);
+   amount = items[id].amount;
+   inv    =  items[id].ininventory;
+   handed =  items[id].handedin;
+   remaining = items[id].remaining;
 
-   id_remaining = "#remaining_" + id;
-   remaining    = Number($(id_remaining).text());
 
-   id_handedin  = "#handedIn_" + id;
-   handedin = Number($(id_handedin).val());
-
-   id_haveininv = "#haveinInv_" + id;
-   haveininv = Number($(id_haveininv).val());
-
-   console.log(tocollect);
-
-   var change = 0;
-
-   var newremaining = tocollect - (haveininv + handedin);
-   $(id_remaining).text(newremaining);
-   calculateItemAmount(id);
-   
+   saveLocalSotrage();
 }
 
 
@@ -181,12 +191,21 @@ for (let index = 0; index < decreaselist.length; index++) {
   const item = decreaselist[index][0];
   const amount = decreaselist[index][1];
 
-  sum = items[item].remaining - amount;
+  sum = items[item].amount - amount;
   if(sum < 0){
-    items[item].remaining = 0;
+    items[item].amount = 0;
   }else{
+    items[item].amount -= amount;
     items[item].remaining -= amount;
   }
+
+  
+
+
+
+
+
+
   delete items[item].quests[id];
   
 }
@@ -202,24 +221,6 @@ for (let index = 0; index < decreaselist.length; index++) {
 
 
 
-}
-
-function calculateItemAmount(key, amount){
-  item = key.replace(/_/g," ");
-  id_remaining = "#remaining_" + key;
-  remaining    = Number($(id_remaining).text());
-  items[item].remaining = remaining;
-
-
-  id_handedin  = "#handedIn_" + key;
-  items[item].handedin = Number($(id_handedin).val());
-
-  console.log(items[item].handedin);
-
-  id_haveininv = "#haveinInv_" + key;
-  items[item].ininventory = Number($(id_haveininv).val());
-
-  saveLocalSotrage();
 }
 
 
