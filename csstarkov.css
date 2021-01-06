@@ -1,0 +1,21 @@
+body{
+    background-color: #1f1f21;
+    color: #fff;
+    font-family: Bender,sans-serif;
+    text-shadow: 3px 3px 3px rgba(0,0,0,.01);
+}
+
+.table>tbody>tr>td{
+    vertical-align: middle;
+}
+.table>tbody>tr:hover{
+    background-color: grey;
+}
+.navbar-default {
+    background: #1f1f21;
+
+}
+
+button, input, optgroup, select, textarea{
+    color: black;
+}

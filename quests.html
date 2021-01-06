@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>HTML5 Skeleton</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="HTML5 skeleton index.html">
+  <meta name="keywords" content="html5,skeleton,index,homepage,jquery,bootstrap">
+  <meta name="author" content="Arul John">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen" rel="stylesheet">
+  <link href="csstarkov.css" media="screen" rel="stylesheet">
+  </head>
+<body>
+<header class="navbar navbar-default">
+  <nav>
+   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+   </button>
+   <a class="navbar-brand" href="index.html">Shopping list</a>
+  </nav>
+  <div class="container">
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/help"><span class="fa fa-help-o"></span> Help</a></li>
+        <li><a href="/login"><span class="fa fa-sign-in"></span> Login</a></li>
+        <li><a href="quests"><span class="fa fa-sign-in"></span>QuestList</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+  <div class="container">
+    <div class="row">
+      <h1 id="quest">QuestList</h1><a href="#list">To your Shopping List</a>
+    </div>
+      <table class="quests table-hover table">
+        <thead>
+            <tr><th>id</th><th>Quest Name</th><th>Type</th><th>Objectives</th><th>Rewards</th></tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+      </table>
+
+   
+  </div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="collectibles.js"></script>
+<script src="quests.js"></script>
+<script src="jstarkov.js"></script>
+<script>
+//<![CDATA[
+typeof $().modal == 'function'  || document.write(unescape('%3Cscript src="/bootstrap.min.js">%3C/script>'))
+//]]>
+</script>
+</body>
+</html>
