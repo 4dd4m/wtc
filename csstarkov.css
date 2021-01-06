@@ -20,3 +20,7 @@ body{
 button, input, optgroup, select, textarea{
     color: black;
 }
+
+.itemstocollect{
+    width: 75%;
+}
