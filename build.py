@@ -2,17 +2,30 @@ from bs4 import BeautifulSoup as bs
 import csv
 import json
 
+
+#get Quest File
+from urllib.request import urlopen
+url='https://escapefromtarkov.fandom.com/wiki/Quests'
+page = urlopen(url)
+page_content = page.read().decode()
+f = open('Quest', 'w')
+f.write(page_content)
+f.close()
+
+
 traders = ['Fence','Jaeger','Mechanic','Pacekeeper','Prapor','Ragman','Skier','Therapist']
 cols = ['id','questname','type','objective','reward']
 quests = []
 
-f = open('Quest', "rb")
+f = open('Quest', "r")
 soup = bs(f, 'html.parser')
 tables = soup.find_all( class_='wikitable')
 id=0
 for table in tables:
-    dealer = table.tbody.tr.th.a.text
-
+    try:
+        dealer = table.tbody.tr.th.a.text
+    except AttributeError:
+        continue
     rows = table.find_all('tr')
     rowcounter = 0
     for row in rows[2:]:
@@ -26,33 +39,33 @@ for table in tables:
         else:
             questName = row.th.a.text
 
-
         ths = row.find_all('td')
         objectives = ths[0]
         rewards = ths[1]
 
-
-
         for reward in rewards:
-            reward = str(reward)
-            rewardstring += reward.strip()
+            try:
+                reward = reward
+                rewardstring += reward.strip()
+            except TypeError:
+                rewardstring += ""
+                pass
 
         for objective in objectives:
-            objective = str(objective)
-            objectivesstring += objective.strip()
+            try:
+                objective = objective
+                objectivesstring += objective.strip()
+            except TypeError:
+                objectivesstring += ""
+                pass
            
-            
-        
-        
-        
-        
-
-
-
-
         if questName not in quests:
+            str = 'Quest added'
             quests.append([id,questName,questType,objectivesstring,rewardstring])
-        #print('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+            str += (': {}'.format(questName))
+
+    
+        print(str)
         rowcounter += 1
         id+=1
         #break
