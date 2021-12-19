@@ -2,16 +2,13 @@ from bs4 import BeautifulSoup as bs
 from Quest import Quest
 import csv
 import json
+import getQuest
 
 
-#get Quest File
-from urllib.request import urlopen
-url='https://escapefromtarkov.fandom.com/wiki/Quests'
-page = urlopen(url)
-page_content = page.read().decode()
-f = open('Quest', 'w')
-f.write(page_content)
-f.close()
+generateQuestsFile = False
+
+if generateQuestsFile == True:
+    getQuest.getQuestsFile()
 
 questList = []
 
@@ -20,7 +17,11 @@ cols = ['id','questname','type','objective','reward']
 quests = []
 
 #Parse the Wuest File
-f = open('Quest', "r")
+try:
+    f = open('Quest', "r")
+except FileNotFoundError:
+    getQuest.getQuestsFile()
+    f = open('Quest', "r")
 soup = bs(f, 'html.parser')
 tables = soup.find_all( class_='wikitable')
 id=0

@@ -1,4 +1,7 @@
-# Tarkov What To Collect
+#Tarkov What To Collect
 
+##Quests needs to modify after downloading the quests
+* Crisis
+* Acquaintance
 
-This short javascript projects help to keep track of all the quests and quest items in the game.
+This short javaScript projects help to keep track of all the quests and quest items in the game.
