@@ -79,8 +79,6 @@ for table in tables:
         rowcounter += 1
         id+=1
         #break
-for i in questList:
-    print(i)
-    print(i.parseItems())
+    
 with open('quests.csv', 'w', encoding="utf-8") as f:
     f.write(json.dumps(quests))
