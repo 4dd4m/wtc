@@ -60,7 +60,7 @@ for (const key in items){ //items == localstorage.items
             background = 'style="background: transparent;"';
         }
 
-        if(options.show_collector == false && 201 in element.quests){
+        if(options.show_collector == false && 229 in element.quests){
             continue; //skip the collector quest
         }else{
             icon = "";
