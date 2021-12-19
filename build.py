@@ -22,6 +22,8 @@ try:
 except FileNotFoundError:
     getQuest.getQuestsFile()
     f = open('Quest', "r")
+f = open('Quest', "r")
+
 soup = bs(f, 'html.parser')
 tables = soup.find_all( class_='wikitable')
 id=0
@@ -81,5 +83,9 @@ for table in tables:
         id+=1
         #break
     
+for i in questList:
+    print(i)
+    print(i.parseItems())
+
 with open('quests.csv', 'w', encoding="utf-8") as f:
     f.write(json.dumps(quests))
