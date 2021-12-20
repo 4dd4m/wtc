@@ -4,88 +4,87 @@ import csv
 import json
 import getQuest
 
-
-generateQuestsFile = False
-
-if generateQuestsFile == True:
+def generateQuestsFile():
     getQuest.getQuestsFile()
 
-questList = []
+def parseQuests():
+    #quest objects
+    questList = []
 
-traders = ['Fence','Jaeger','Mechanic','Pacekeeper','Prapor','Ragman','Skier','Therapist']
-cols = ['id','questname','type','objective','reward']
-quests = []
+    #uquest csv
+    quests = []
 
-#Parse the Wuest File
-try:
-    f = open('Quest', "r")
-except FileNotFoundError:
-    getQuest.getQuestsFile()
-    f = open('Quest', "r")
-f = open('Quest', "r")
-
-soup = bs(f, 'html.parser')
-tables = soup.find_all( class_='wikitable')
-id=0
-
-#iterate the tables
-for table in tables:
+    #Parse the Wuest File
     try:
-        dealer = table.tbody.tr.th.a.text.lower()
-        
-    except AttributeError:
-        continue
-    rows = table.find_all('tr')
-    rowcounter = 0
-    for row in rows[2:]:
-        q = None
-        objectivesstring = ''
-        rewardstring = ''
-        if rowcounter == 0:
-            ths = row.find_all('th')
-            questName = row.th.a.text
-            questType = ths[1].text.strip()
-        else:
-            questName = row.th.a.text
+        f = open('Quest', "r")
+    except FileNotFoundError:
+        getQuest.getQuestsFile()
+        f = open('Quest', "r")
+    f = open('Quest', "r")
 
-        ths = row.find_all('td')
-        objectives = ths[0]
-        rewards = ths[1]
-        q = Quest(questName)
-        q.addTrader(dealer)
+    soup = bs(f, 'html.parser')
+    tables = soup.find_all( class_='wikitable')
+    id=0
 
-        for reward in rewards:
-            try:
-                rewardstring += reward.strip()
-                q.addRewardStr(rewards.text)
-            except TypeError:
-                pass
-
-
-        for objective in objectives:
-            try:
-                objectivesstring += objective.strip()
-                q.addObjectiveStr(objectives.text)
-            except TypeError:
-                pass
-
-        if questName not in quests:
-            str = 'Quest added'
-            quests.append([id,questName,questType,objectivesstring,rewardstring])
-            str += (': {}'.format(questName))
-    
-
-        if q is not None:
-            questList.append(q)
-            q = None
+    #iterate the tables
+    for table in tables:
+        try:
+            dealer = table.tbody.tr.th.a.text.lower()
             
-        rowcounter += 1
-        id+=1
-        #break
-    
-for i in questList:
-    print(i)
-    print(i.parseItems())
+        except AttributeError:
+            continue
+        rows = table.find_all('tr')
+        rowcounter = 0
+        for row in rows[2:]:
+            q = None
+            objectivesstring = ''
+            rewardstring = ''
+            if rowcounter == 0:
+                ths = row.find_all('th')
+                questName = row.th.a.text
+                questType = ths[1].text.strip()
+            else:
+                questName = row.th.a.text
 
-with open('quests.csv', 'w', encoding="utf-8") as f:
-    f.write(json.dumps(quests))
+            ths = row.find_all('td')
+            objectives = ths[0]
+            rewards = ths[1]
+            q = Quest(questName)
+            q.addTrader(dealer)
+
+            for reward in rewards:
+                try:
+                    rewardstring += reward.strip()
+                    q.addRewardStr(rewards.text)
+                except TypeError:
+                    pass
+
+
+            for objective in objectives:
+                try:
+                    objectivesstring += objective.strip()
+                    q.addObjectiveStr(objectives.text)
+                except TypeError:
+                    pass
+
+            if questName not in quests:
+                str = 'Quest added'
+                quests.append([id,questName,questType,objectivesstring,rewardstring])
+                str += (': {}'.format(questName))
+        
+
+            if q is not None:
+                questList.append(q)
+                q = None
+                
+            rowcounter += 1
+            id+=1
+            #break
+
+    with open('quests.csv', 'w', encoding="utf-8") as f:
+        f.write(json.dumps(quests))
+
+if __name__ == "__main__":
+    pass
+    #generateQuestsFile()
+    parseQuests()
