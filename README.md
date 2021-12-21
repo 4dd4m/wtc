@@ -4,7 +4,7 @@ This short javascript/python project help to keep track of all the quests and qu
 
 ##How to Assemble the list (in case you want to do it yourself)
 * run build.py with uncommented generateQuestsFile()
-* run python Collectibles.py
+* run python Collectibles.py after you modified the two quest
 
 ##Quests needs to modify after downloading the Quest.html
 * Crisis
