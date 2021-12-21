@@ -45,7 +45,7 @@ $('.quests').html(HTML);
 var HTML = '';
 HTML += "<tr style='font-align: center;'><th style='width: 350px;'>Item name (<span class='glyphicon glyphicon-ok'></span> FIR | "
     + "<span class='glyphicon glyphicon-cog'></span> CanBeCrafted | <span class='glyphicon glyphicon-refresh'></span> Barter)</th>"
-    + "<th style='width: 20px;'>Need</th><th style='width: 110px;'>Stashed</th><th style='width: 110px;'>Handed In</th><th  style='width: 180px;'>Remaining</th></tr>";
+    + "<th style='width: 20px;'>Total</th><th style='width: 110px;'>Stash</th><th style='width: 110px;'>Handed In</th><th  style='width: 60px;'>Remaining</th></tr>";
 trid=1;
 for (item in items){ //items == localstorage.items
     element = items[item];
@@ -97,7 +97,7 @@ for (item in items){ //items == localstorage.items
 
                     }else{
                         HTML += `<td><button type='button' class='btn btn-primary btn-sm' id='completebutton_`+item2.replace(/ /g, "_")
-                            + `' onClick='javascript:markAsCompleteQuest(`+item2+`);'>Marked quest as complete</button></td>` 
+                            + `' onClick='javascript:markAsCompleteQuest(`+item2+`);'>Completed</button></td>` 
 
                     }
                         + `</tr>`;
@@ -166,9 +166,10 @@ function calculateRemaining(id){
     inv    =  items[id].ininventory;
     handed =  items[id].handedin;
     remaining = items[id].remaining;
-
-
     saveLocalSotrage();
+    if(remaining == 0){
+        location.reload();
+    }
 }
 
 
@@ -178,7 +179,9 @@ function searchItemById(key){
 }
 
 function markAsCompleteQuest(id){
-    console.log("quest: " +id);
+    yes = confirm("Are you sure?")
+
+    if(yes){
 
     affectedItems = [];
     decreaselist = [];
@@ -212,6 +215,7 @@ function markAsCompleteQuest(id){
 
     saveLocalSotrage();
     location.reload()
+    }
 }
 
 
@@ -240,8 +244,11 @@ function toggle_show_0_remaining(value){
 }
 
 function reset(){
+    yes = confirm("Reset is irreversible. Are you sure?")
+    if(yes){
     localStorage.clear();
     location.reload();
+    }
 }
 
 function exportItems(){
