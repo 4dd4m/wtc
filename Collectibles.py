@@ -1,11 +1,9 @@
 import Quest, build, json
 
 def generateCollectibles():
-    """Generate The collectibles String"""
+    """Generate The collectibles JSON"""
     questList = build.parseQuests()
     collectibleDict = {}
-    header = "let items = "
-    tail = ";"
 
     c = 0 #questid
     for q in questList:
@@ -29,14 +27,11 @@ def generateCollectibles():
                     collectibleDict[i]["handedin"] = 0
                     collectibleDict[i]["remaining"] += int(a)
                     collectibleDict[i]["quest"][int(c)] = int(a)
-            print(q.id)
         c += 1
-
-
     return json.dumps(collectibleDict)
 
 def addHeader(str):
-    """Add a let items = { to the string"""
+    """Add a let items = {, and the default options to the string"""
     options = defaultOptions()
     return "let items = " + str + ";\n" + options
 
@@ -49,5 +44,8 @@ def defaultOptions() -> str: #return with the default options
 
 if __name__ == "__main__":
     str = generateCollectibles()
-    f = addHeader(str)
-    print(f)
+    a = addHeader(str)
+    with open('collectibles.js', 'w', encoding="utf-8") as f:
+        f.write(a)
+        f.close()
+    print("Items have been saved to collectibles.js, have fun")
