@@ -45,7 +45,7 @@ $('.quests').html(HTML);
 var HTML = '';
 HTML += "<tr style='font-align: center;'><th style='width: 350px;'>Item name (<span class='glyphicon glyphicon-ok'></span> FIR | "
     + "<span class='glyphicon glyphicon-cog'></span> CanBeCrafted | <span class='glyphicon glyphicon-refresh'></span> Barter)</th>"
-    + "<th style='width: 20px;'>Total</th><th style='width: 110px;'>Stash</th><th style='width: 110px;'>Handed In</th><th  style='width: 60px;'>Remaining</th></tr>";
+    + "<th style='width: 20px;'>Total</th><th style='width: 110px;'>Stash</th><th style='width: 110px;'>Turned In</th><th  style='width: 60px;'>Remaining</th></tr>";
 trid=1;
 for (item in items){ //items == localstorage.items
     element = items[item];
