@@ -22,6 +22,7 @@ On Crisis:
 This thing is important, because the wiki is inconsistent on these quests.
 
 ##First boot
+* open the index.html in your browser
 * hit the reset list button to generate the initial localStorage items
 * any other hit to reset list button will initialize the values, so be careful
 
