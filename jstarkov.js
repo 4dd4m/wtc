@@ -46,7 +46,6 @@ var HTML = '';
 HTML += "<tr style='font-align: center;'><th style='width: 350px;'>Item name (<span class='glyphicon glyphicon-ok'></span> FIR | "
     + "<span class='glyphicon glyphicon-cog'></span> CanBeCrafted | <span class='glyphicon glyphicon-refresh'></span> Barter)</th>"
     + "<th style='width: 20px;'>Total</th><th style='width: 110px;'>Stash</th><th style='width: 110px;'>Turned In</th><th  style='width: 60px;'>Remaining</th></tr>";
-trid=1;
 for (item in items){ //items == localstorage.items
     element = items[item];
 
@@ -82,13 +81,12 @@ for (item in items){ //items == localstorage.items
                 + "<td>" + haveinInvInput(item) + "</td>"
                 + "<td>" + handedInInput(item) + "</td>"
                 + "</td><td><span id='remaining_" + item.replace(/ /g, "_") + "'>"+ element.remaining +"</span></td></tr>";
-            trid++;
 
 
             if(options.show_quests == true){ //display the quests
-                for(item2 in element.quest){
+                for(q in element.quest){
                     HTML += `<tr ` + background+
-                        `><td><span style='margin-left:120px;'><a href='https://escapefromtarkov.gamepedia.com/`+ csv[item2][1] +  `'>` + csv[item2][1]  +`</a></span><td>` + element.quest[item2]+ `</td></td>`
+                        `><td><span style='margin-left:120px;'><a href='https://escapefromtarkov.gamepedia.com/`+ csv[q][1] +  `'>` + csv[q][1]  +`</a></span><td>` + element.quest[q]+ `</td></td>`
                         + `<td></td>`
                         + `<td></td>`;
 
@@ -96,12 +94,11 @@ for (item in items){ //items == localstorage.items
                         HTML += `<td></td>`;
 
                     }else{
-                        HTML += `<td><button type='button' class='btn btn-primary btn-sm' id='completebutton_`+item2.replace(/ /g, "_")
-                            + `' onClick='javascript:markAsCompleteQuest(`+item2+`);'>Completed</button></td>` 
+                        HTML += `<td><button type='button' class='btn btn-primary btn-sm' id='completebutton_`+q.replace(/ /g, "_")
+                            + `' onClick='javascript:markAsCompleteQuest(`+q+`);'>Completed</button></td>` 
 
                     }
                         + `</tr>`;
-                    trid++;
                 }
             }
 
@@ -155,27 +152,10 @@ function updateItemCount(id){
     items[itemid].remaining = Number(items[itemid].amount - (items[itemid].handedin + items[itemid].ininventory));
     id_remaining = "#remaining_" + id;
     $(id_remaining).text(items[itemid].remaining);
-    calculateRemaining(itemid);
-}
-
-
-//calculate remaining amount based in the tables data
-function calculateRemaining(id){
-    console.log(items[id]);
-    amount = items[id].amount;
-    inv    =  items[id].ininventory;
-    handed =  items[id].handedin;
-    remaining = items[id].remaining;
     saveLocalSotrage();
-    if(remaining == 0){
+    if(items[itemid].remaining == 0){
         location.reload();
     }
-}
-
-
-//search a collectible item based on their id's
-function searchItemById(key){
-    return items[key];
 }
 
 function markAsCompleteQuest(id){
@@ -210,7 +190,6 @@ function markAsCompleteQuest(id){
             items[item].remaining -= amount;
         }
         delete items[item].quest[id];
-
     }
 
     saveLocalSotrage();
