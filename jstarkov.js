@@ -36,7 +36,7 @@ var HTML = '';
 HTML += "<tr><th>id</th><th>Quest Name</th><th>Type</th><th>Objectives</th><th>Rewards</th></tr>";
 
 for (let index = 0; index < csv.length; index++) {
-    const element = csv[index];
+    element = csv[index];
     HTML += ('<tr><td>'+csv[index][0]+'</td><td>'+csv[index][1]+'</td><td>'+csv[index][2]+'</td><td>'+csv[index][3]+'</td><td>'+csv[index][4]+'</td></tr>');
 }
 $('.quests').html(HTML);
@@ -47,8 +47,8 @@ HTML += "<tr style='font-align: center;'><th style='width: 350px;'>Item name (<s
     + "<span class='glyphicon glyphicon-cog'></span> CanBeCrafted | <span class='glyphicon glyphicon-refresh'></span> Barter)</th>"
     + "<th style='width: 20px;'>Need</th><th style='width: 110px;'>Stashed</th><th style='width: 110px;'>Handed In</th><th  style='width: 180px;'>Remaining</th></tr>";
 trid=1;
-for (const key in items){ //items == localstorage.items
-    const element = items[key];
+for (item in items){ //items == localstorage.items
+    element = items[item];
 
     if(element.remaining >= 1 || options.show_0_remaining == true){ 
         //display the row if show0 = true or ramaning > 1
@@ -60,7 +60,7 @@ for (const key in items){ //items == localstorage.items
             background = 'style="background: transparent;"';
         }
 
-        if(options.show_collector == false && 229 in element.quests){
+        if(options.show_collector == false && 229 in element.quest){
             continue; //skip the collector quest
         }else{
             icon = "";
@@ -76,20 +76,19 @@ for (const key in items){ //items == localstorage.items
 
             //single table row
             HTML += "<tr " + background + "><td>"
-                + "<a href='https://escapefromtarkov.gamepedia.com/" + key + "'>" +key + "</a>" + icon 
-                + "</span></td><td><span id='tocollect_" + key.replace(/ /g, "_")+"'>"
+                + "<a href='https://escapefromtarkov.gamepedia.com/" + item + "'>" +item + "</a>" + icon 
+                + "</span></td><td><span id='tocollect_" + item.replace(/ /g, "_")+"'>"
                 + element.amount + "</span></td>" 
-                + "<td>" + haveinInvInput(key) + "</td>"
-                + "<td>" + handedInInput(key) + "</td>"
-                + "</td><td><span id='remaining_" + key.replace(/ /g, "_") + "'>"+ element.remaining +"</span></td></tr>";
+                + "<td>" + haveinInvInput(item) + "</td>"
+                + "<td>" + handedInInput(item) + "</td>"
+                + "</td><td><span id='remaining_" + item.replace(/ /g, "_") + "'>"+ element.remaining +"</span></td></tr>";
             trid++;
 
-            questId = element.quests; // quests : {}
 
             if(options.show_quests == true){ //display the quests
-                for(var key2 in questId){
+                for(item2 in element.quest){
                     HTML += `<tr ` + background+
-                        `><td><span style='margin-left:120px;'><a href='https://escapefromtarkov.gamepedia.com/`+ csv[key2][1] +  `'>` + csv[key2][1] + `</a></span><td>` + questId[key2]+ `</td></td>`
+                        `><td><span style='margin-left:120px;'><a href='https://escapefromtarkov.gamepedia.com/`+ csv[item2][1] +  `'>` + csv[item2][1]  +`</a></span><td>` + element.quest[item2]+ `</td></td>`
                         + `<td></td>`
                         + `<td></td>`;
 
@@ -97,8 +96,8 @@ for (const key in items){ //items == localstorage.items
                         HTML += `<td></td>`;
 
                     }else{
-                        HTML += `<td><button type='button' class='btn btn-primary btn-sm' id='completebutton_`+key2.replace(/ /g, "_")
-                            + `' onClick='javascript:markAsCompleteQuest(`+key2+`);'>Marked quest as complete</button></td>` 
+                        HTML += `<td><button type='button' class='btn btn-primary btn-sm' id='completebutton_`+item2.replace(/ /g, "_")
+                            + `' onClick='javascript:markAsCompleteQuest(`+item2+`);'>Marked quest as complete</button></td>` 
 
                     }
                         + `</tr>`;
@@ -178,35 +177,27 @@ function searchItemById(key){
     return items[key];
 }
 
-function checkQuestCanBeCompleted(id){
-    console.log("will check quest as complete");
-}
-
 function markAsCompleteQuest(id){
     console.log("quest: " +id);
 
-    activeItem = {};
     affectedItems = [];
     decreaselist = [];
 
-    for(const item in items){
-        if(id in items[item].quests){
-            affectedItems.push(item);
+    for(item in items){ //iterate throught the localstorage
+
+        if(id in items[item].quest){ //if the questid is among the quests
+            affectedItems.push(item);   //push the item name to the list
         }
     }
-    //console.log("If quest completed, affecting these items as well: " + affectedItems);
 
-    for (let index = 0; index < affectedItems.length; index++) {
-        const element = affectedItems[index];
-        //console.log("Item: " + affectedItems[index] + ". Decrease with the following amount: " +items[element].quests[id]);
-        decreaselist.push([affectedItems[index],items[element].quests[id]]);
-        //console.log(decreaselist);
-
+    for (let index = 0; index < affectedItems.length; index++) { //iterating througt the affected items
+    element = affectedItems[index];     //console.log("Item: " + affectedItems[index] + ". Decrease with the following amount: " +items[element].quests[id]);
+        decreaselist.push([affectedItems[index],items[element].quest[id]]);             
     }
 
     for (let index = 0; index < decreaselist.length; index++) {
-        const item = decreaselist[index][0];
-        const amount = decreaselist[index][1];
+        item = decreaselist[index][0];
+        amount = decreaselist[index][1];
 
         sum = items[item].amount - amount;
         if(sum < 0){
@@ -215,31 +206,13 @@ function markAsCompleteQuest(id){
             items[item].amount -= amount;
             items[item].remaining -= amount;
         }
-
-
-
-
-
-
-
-
-        delete items[item].quests[id];
+        delete items[item].quest[id];
 
     }
 
-    //console.log("Corresponding quest id: " + items[questItem].quests[id]);
-
-
-
-    //items[activeItem].remaining -= amountInQuest;
-    //delete items[activeItem].quests[id];
     saveLocalSotrage();
-    location.reload();
-
-
-
+    location.reload()
 }
-
 
 
 function saveLocalSotrage(){
@@ -288,6 +261,6 @@ function importItems(){
         localStorage.setItem('options', JSON.stringify(options));
         items = JSON.parse(localStorage.getItem('collectibles'));
         options = JSON.parse(localStorage.getItem('options'));
-        location.reload();
+        //location.reload();
     }
 }

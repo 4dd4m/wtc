@@ -1,147 +1,66 @@
-//remaining + amount == amount in quests{xx:amount}, xx:amount}, xx:amount}
-    //amount = osszes
-    //remainig hatra van0, gyakorlatilag == (handedin + ininventory) - amount
-//remaining: 0,  amount : 0, quests : {questIdFromQuest.js : questAmount, questIdFromQuest.js : questAmount,},
-let items = {
-'3-b-TG':{crafted : false,  barter : false,  handedin: 0, ininventory: 0, remaining: 0,  amount : 0, quests : {55:1}, inraid : true},
-'OFZ 160mm Shell':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining: 5, amount : 5, quests : {26:5}, inraid : true},
-'303 Dorm Room Key':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'42nd Signature Blend English Tea':{crafted : false,  barter : false,  handedin : 0, ininventory: 0,remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'5L propane tank':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {99:2}, inraid : true},
-'60-round mags for AK':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:3, amount : 3, quests : {9:3}, inraid : true},
-'6B43 greater than 50 percent':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'6B43 less than 50 percent':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'7 PMC BEAR dogtags':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:7, amount : 7, quests : {19:7}, inraid : true},
-'7 USEC BEAR dogtags':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:7, amount : 7, quests : {19:7}, inraid : true},
-'AHF1-M':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {55:1}, inraid : true},
-'Alkali':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {99:2}, inraid : true},
-'Antique Teapots':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {173:3}, inraid : true},
-'Antique Vases':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {173:2}, inraid : true},
-'Antique axe':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Aramid Fiber Cloth':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {183:5}, inraid : true},
-'BNTI Gzhel-K armor':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'Bars A-2607':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:5, amount : 5, quests : {17:5}, inraid : true},
-'Battered Antique Book':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'BlackRock Chest Rig':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {181:2}, inraid : true},
-'Blue Keycard':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'Broken GPhone':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {138:3}, inraid : true},
-'Bronze Lion':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {180:2}, inraid : true},
-'CMS surgery kits':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {199:2}, inraid : true},
-'CPU':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {148:8,138:3}, inraid : true},
-'Can of Dr Lupos coffee beans':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Can of sprats':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Capacitors':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {151:5}, inraid : true},
-'Car Batteries':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:4, amount : 4, quests : {39:4}, inraid : true},
-'Cat figurine':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {180:1}, inraid : true},
-'Clin wipers':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {95:2}, inraid : true},
-'Corrugated hoses':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {99:2,95:2}, inraid : true},
-'Cowboy Hat':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {162:2}, inraid : true},
-'Customs Military Checkpoint key':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'Deadlyslobs beard oil':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Delicious Beef Stew':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:15, amount : 15, quests : {187:2,}, inraid : true},
-'USD-Dollars':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:500, amount : 500, quests : {96:8000,74:6000,40:500}, inraid : false},
-'Emelya Rye Croutons':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {187:2}, inraid : true},
-'Cultist knife':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {85:12}, inraid : true},
-'Euro':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {108:50000}, inraid : false},
-'Fake Mustache':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'FireKlean Gun Lube':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Fleece Cloth':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {184:10}, inraid : true},
-'Fuel Conditioner':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {171:4}, inraid : true},
-'Gas Station Closet Key':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'Pile of meds':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {59:20}, inraid : false},
-'Gas analyzer':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:3, amount : 3, quests : {35:1,36:2}, inraid : true},
-'Gold Chains':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'Golden 1GPhone':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Golden Rooster':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Golden TT':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {206:1}, inraid : true},
-'Goshan Cash Register Key':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'Graphics Card':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {148:3}, inraid : false},
-'Green Keycard':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'Gunpowder - Kite':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'Gzhel greater than 50 percent':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'Gzhel less than 50 percent':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'Horse Figurine':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {180:2}, inraid : true},
-'Informant\'s Briefcase':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : true},
-'Iskra lunch boxes':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {189:2,187:3}, inraid : true},
-'Jar of DevilDog Mayo':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'KEKTAPE Duct Tape':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {184:5}, inraid : true},
-'Killas helmet':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {208:1}, inraid : true},
-'Kotton Beanie':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'LEDX':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:2, amount : 2, quests : {59:5,49:1}, inraid : true},
-'M4A1':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:1, amount : 1, quests : {18:1}, inraid : true},
-'M67 grenades':{crafted : false,  barter : true,  handedin : 0, ininventory: 0, remaining:10, amount : 10, quests : {28:10}, inraid : false},
-'MP-133 pump-action shotguns':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {0:2}, inraid: false },
-'MRE ration packs':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {90:5}, inraid : false},
-'Bottles of Tarkovskaya vodka':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {186:10}, inraid : false},
-'Bottles of Dan Jackiel whiskey':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {186:10}, inraid : false},
-'Bottle of water':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {189:2}, inraid : false},
-'Purified water':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {186:3}, inraid : false},
-'Malboro cigarettes':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {146:5}, inraid : true},
-'Medical bloodset':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {72:3}, inraid : true},
-'Military COFDM wireless Signal Transmitter':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {118:5,113:1}, inraid : true},
-'6 STEN 140 Military battery':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:1, amount : 1, quests : {26:1}, inraid : true},
-'Module 3M BodyArmor':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {61:1}, inraid : true},
-'Morphine Syringes':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:4, amount : 4, quests : {99:4,37:4}, inraid : true},
-'Multitool':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'Old Firesteel':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Ophthalmoscope':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:1, amount : 1, quests : {49:1}, inraid : true},
-'Ox Bleach':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {95:2}, inraid : true},
-'PM pistol':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : true},
-'Paracord':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {183:3}, inraid : true},
-'Pestily Plague Mask':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Pilgrim Tourist Backpack':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {170:1}, inraid : true},
-'Polyamide Fabric':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {184:10}, inraid : true},
-'Portable Defibrillator':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:5, amount : 5, quests : {199:1,59:5}, inraid : true},
-'Powercord':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {145:2}, inraid : true},
-'Printed circuit board':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {145:2,138:3}, inraid : true},
-'Raven Figurine':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Rechargeable battery':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {138:3}, inraid : true},
-'Respirator':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {72:4}, inraid : true},
-'Ripstop Cloth':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {183:10}, inraid : true},
-'Roler Submariner Gold Wrist Watch':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {180:1}, inraid : true},
-'Roler watch':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'Rubles':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:400000, amount : 400000, quests : {70:1000000,46:400000}, inraid : false},
-'Salewa kits':{crafted : true,  barter :true,  handedin : 0, ininventory: 0, remaining:3, amount : 3, quests : {32:3}, inraid : true},
-'Sanitar Stimulants all':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {111:7}, inraid : true},
-'Sanitars ophtalmoscope':{crafted : false,  barter : true,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : true},
-'Sanitars surgery kit':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : true},
-'Shroud Half-mask':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Shturmans key':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {209:1}, inraid : true},
-'Tagilla BOSS cap':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {211:1}, inraid : true},
-'Silver Badge':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Ski Hat With Holes for Eyes':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {170:1}, inraid : true},
-'Sniper Rifle SV-98':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'Spark Plugs':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : true},
-'Strike cigarettes':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {146:5}, inraid : true},
-'T-Shaped Plug':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {145:4}, inraid : true},
-'TOZ 106':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {61:1}, inraid : true},
-'TerraGroup Labs access keycards':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {205:2}, inraid : true},
-'The key from the locked resort rooms':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : true},
-'Tushonka':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {52:15}, inraid : true},
-'UHF RFID Reader':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {152:1,118:5}, inraid : true},
-'USB flash drives':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {222:3,64:2}, inraid : true},
-'Ushanka Ear-flap Cap':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {162:2}, inraid : true},
-'VPX Flash Storage Module':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {152:1,118:5}, inraid : true},
-'Veritas Guitar Pick':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Evasion armband':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Smoke balaclava':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Can of RatCola':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Secure container Epsilon':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {230:1}, inraid : true},
-'Loot Lord plushie':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'WZ Wallet':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'LVNDMARK\'s rat poison':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {229:1}, inraid : true},
-'Virtex programmable processors':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {118:5,113:2}, inraid : true},
-'WD-40 100ml':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {95:1}, inraid : true},
-'Wartech TV-109' :{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {181:2}, inraid : true},
-'Wilston cigarettes':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {146:5}, inraid : true},
-'Wires':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {151:5}, inraid : true},
-'ZB-014 key':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:0, amount : 0, quests : {}, inraid : false},
-'AK-74N assault rifle':{crafted : true,  barter : false,  handedin : 0, ininventory: 0, remaining:1, amount : 1, quests : {18:1}, inraid : true},
-'Lower half-mask':{crafted : false,  barter : false,  handedin : 0, ininventory: 0, remaining:7, amount : 7, quests : {15:7}, inraid : true},
-};
-
+1
+10
+16
+18
+19
+20
+27
+29
+33
+36
+37
+38
+40
+41
+47
+50
+53
+56
+59
+62
+65
+71
+73
+74
+75
+86
+91
+96
+99
+100
+109
+112
+114
+119
+139
+146
+147
+149
+152
+153
+163
+171
+172
+174
+175
+180
+181
+182
+184
+185
+187
+200
+206
+207
+209
+210
+212
+223
+230
+231
+let items = {"MP-133 shotguns": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"0": 2}}, "AK-74 5.45x39 6L31 60-round magazine": {"amount": 3, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 3, "quest": {"9": 3}}, "Lower half-masks": {"amount": 7, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 7, "quest": {"15": 7}}, "Bars A-2607 knives": {"amount": 5, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 5, "quest": {"17": 5}}, "AK-74N assault rifle": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"18": 1}}, "M4A1 assault rifle": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"18": 1}}, "PM 9x18PM pistols": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"18": 2}}, "BEAR PMC dogtags": {"amount": 7, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 7, "quest": {"19": 7}}, "USEC PMC dogtags": {"amount": 14, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 14, "quest": {"19": 7, "73": 7}}, "6-STEN-140-M military battery": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"26": 1}}, "OFZ 30x160mm shells": {"amount": 5, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 5, "quest": {"26": 5}}, "M67 grenades": {"amount": 10, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 10, "quest": {"28": 10}}, "Salewa first aid kits": {"amount": 3, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 3, "quest": {"32": 3}}, "Gas analyzer": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"35": 1}}, "Gas analyzers": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"36": 2}}, "Morphine injectors": {"amount": 8, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 8, "quest": {"37": 4, "99": 4}}, "Car batteries": {"amount": 4, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 4, "quest": {"39": 4}}, "Spark plugs": {"amount": 8, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 8, "quest": {"39": 8}}, "USD": {"amount": 14500, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 14500, "quest": {"40": 500, "74": 6000, "98": 8000}}, "RUB": {"amount": 1400000, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1400000, "quest": {"46": 400000, "70": 1000000}}, "Ophthalmoscope": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"49": 1}}, "LEDX Skin Transilluminator": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"49": 1}}, "Small cans of beef stew": {"amount": 15, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 15, "quest": {"52": 15}}, "TerraGroup Labs keycard (Blue)": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"55": 1}}, "TerraGroup Labs keycard (Green)": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"55": 1}}, "AHF1-M stimulant injector": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"55": 1, "111": 1}}, "3-(b-TG) stimulant injector": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"55": 1, "111": 1}}, "Dorm room 303 key": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"58": 1}}, "ZB-014 key": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"58": 1}}, "Customs military checkpoint key": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"58": 1}}, "Gas station closet key": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"58": 1}}, "found in raid Module-3M armor": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"61": 1}}, "found in raid TOZ-106 shotgun": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"61": 1}}, "Secure flash drives": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"64": 2}}, "Respirators": {"amount": 4, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 4, "quest": {"72": 4}}, "Medical bloodsets": {"amount": 3, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 3, "quest": {"72": 3}}, "knives": {"amount": 12, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 12, "quest": {"85": 12}}, "MRE ration packs": {"amount": 5, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 5, "quest": {"90": 5}}, "WD-40 (100ml)": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"95": 1}}, "Clin window cleaners": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"95": 2}}, "Corrugated hoses": {"amount": 4, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 4, "quest": {"95": 2, "99": 2}}, "Ox bleaches": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"95": 2}}, "Alkaline cleaners for heat exchangers": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"99": 2}}, "5L propane tanks": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"99": 2}}, "EUR": {"amount": 50000, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 50000, "quest": {"108": 50000}}, "M.U.L.E. stimulant injector": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"111": 1}}, "\"Obdolbos\" cocktail injector": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"111": 1}}, "Meldonin stimulant injector": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"111": 1}}, "P22 stimulant injector": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"111": 1}}, "L1 (Norepinephrine) stimulant injector": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"111": 1}}, "Virtex programmable processors": {"amount": 7, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 7, "quest": {"113": 2, "118": 5}}, "Military COFDM wireless Signal Transmitter": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"113": 1}}, "VPX Flash Storage Modules": {"amount": 5, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 5, "quest": {"118": 5}}, "UHF RFID Readers": {"amount": 5, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 5, "quest": {"118": 5}}, "Military COFDM wireless Signal Transmitters": {"amount": 5, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 5, "quest": {"118": 5}}, "PC CPUs": {"amount": 3, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 3, "quest": {"138": 3}}, "Rechargeable batteries": {"amount": 3, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 3, "quest": {"138": 3}}, "Printed circuit boards": {"amount": 5, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 5, "quest": {"138": 3, "145": 2}}, "Broken GPhones": {"amount": 3, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 3, "quest": {"138": 3}}, "Power cords": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"145": 2}}, "T-Shaped Plugs": {"amount": 4, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 4, "quest": {"145": 4}}, "Malboro cigarettes": {"amount": 5, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 5, "quest": {"146": 5}}, "Strike cigarettes": {"amount": 5, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 5, "quest": {"146": 5}}, "Wilston cigarettes": {"amount": 5, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 5, "quest": {"146": 5}}, "Graphics cards": {"amount": 3, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 3, "quest": {"148": 3}}, "CPU Fans": {"amount": 8, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 8, "quest": {"148": 8}}, "Wires": {"amount": 5, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 5, "quest": {"151": 5}}, "Capacitors": {"amount": 5, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 5, "quest": {"151": 5}}, "UHF RFID Fixed Reader": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"152": 1}}, "VPX Flash Storage Module": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"152": 1}}, "Ushanka ear-flap caps": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"162": 2}}, "Kinda Cowboy hats": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"162": 2}}, "Ski hat with holes for eyes": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"170": 1}}, "Pilgrim tourist backpack": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"170": 1}}, "Fuel conditioners": {"amount": 4, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 4, "quest": {"171": 4}}, "Antique teapots": {"amount": 3, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 3, "quest": {"173": 3}}, "Antique vases": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"173": 2}}, "BNTI Gzhel-K armor in 0-50% durability": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"174": 1}}, "BNTI Gzhel-K armor in 50-100% durability": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"174": 1}}, "6B43 armor in 0-50% condition": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"179": 1}}, "6B43 armor in 50-100% condition": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"179": 1}}, "Horse figurines": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"180": 2}}, "Cat figurine": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"180": 1}}, "Roler Submariner gold wrist watch": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"180": 1}}, "WARTECH TV-109 + TV-106 gear rigs": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"181": 2}}, "BlackRock chest rigs": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"181": 2}}, "Aramid fabrics": {"amount": 5, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 5, "quest": {"183": 5}}, "Ripstop fabrics": {"amount": 10, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 10, "quest": {"183": 10}}, "Paracords": {"amount": 3, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 3, "quest": {"183": 3}}, "Fleece fabrics": {"amount": 10, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 10, "quest": {"184": 10}}, "Cordura polyamide fabrics": {"amount": 10, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 10, "quest": {"184": 10}}, "KEKTAPE duct tapes": {"amount": 5, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 5, "quest": {"184": 5}}, "Bottles of Tarkovskaya vodka": {"amount": 10, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 10, "quest": {"186": 10}}, "Bottles of Dan Jackiel whiskey": {"amount": 10, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 10, "quest": {"186": 10}}, "purified water": {"amount": 3, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 3, "quest": {"186": 3}}, "Portable defibrillator": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"199": 1}}, "CMS surgery kits": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"199": 2}}, "TerraGroup Labs access keycards": {"amount": 2, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 2, "quest": {"205": 2}}, "Reshala's Golden TT": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"206": 1}}, "Killa's helmet": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"208": 1}}, "Shturman's stash key": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"209": 1}}, "BOSS cap": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"211": 1}}, "Secure Flash drives": {"amount": 3, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 3, "quest": {"222": 3}}, "Old firesteel": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Antique axe": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Battered antique book": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "FireKlean gun lube": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Golden rooster": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Silver Badge": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Deadlyslob's beard oil": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Golden 1GPhone": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Jar of DevilDog mayo": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Can of sprats": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Fake mustache": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Kotton beanie": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Can of Dr. Lupo's coffee beans": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Pestily plague mask": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Raven figurine": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Shroud half-mask": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Veritas guitar pick": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "42nd Signature Blend English Tea": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Evasion armband": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Smoke balaclava": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Can of RatCola": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Loot Lord plushie": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "WZ Wallet": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "LVNDMARK's rat poison": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"229": 1}}, "Secure container Epsilon": {"amount": 1, "ininventory": 0, "handedin": 0, "barter": "false", "crafted": "false", "remaining": 1, "quest": {"230": 1}}};
 let options = {
-'show_quests' : true,
-'show_collector' : true,
-'show_0_remaining' : true,
-};
+    'show_quests' : true,
+    'show_collector' : true,
+    'show_0_remaining' : true,
+    };

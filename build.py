@@ -1,13 +1,11 @@
 from bs4 import BeautifulSoup as bs
 from Quest import Quest
-import csv
-import json
-import getQuest
+import csv, json, getQuest
 
 def generateQuestsFile():
     getQuest.getQuestsFile()
 
-def parseQuests():
+def parseQuests() -> list:
     #quest objects
     questList = []
 
@@ -63,15 +61,15 @@ def parseQuests():
             for objective in objectives:
                 try:
                     objectivesstring += objective.strip()
-                    q.addObjectiveStr(objectives.text)
                 except TypeError:
                     pass
 
+            q.addObjectiveStr(objectives.text)
+
             if questName not in quests:
                 str = 'Quest added'
-                quests.append([id,questName,questType,objectivesstring,rewardstring])
+                quests.append([id,questName])
                 str += (': {}'.format(questName))
-        
 
             if q is not None:
                 questList.append(q)
@@ -81,10 +79,27 @@ def parseQuests():
             id+=1
             #break
 
-    with open('quests.csv', 'w', encoding="utf-8") as f:
-        f.write(json.dumps(quests))
+
+    with open('quests.js', 'w', encoding="utf-8") as f:
+        str = "var csv = "
+        str += json.dumps(quests)
+        str += ";"
+
+        f.write(str)
+
+    return questList
+
+def defaultOptions() -> str: #return with the default options
+    return """let options = {
+    'show_quests' : true,
+    'show_collector' : true,
+    'show_0_remaining' : true,
+    };"""
+
+def generateItems(quests) -> dict:
+    pass
 
 if __name__ == "__main__":
-    pass
-    #generateQuestsFile()
-    parseQuests()
+    quests = parseQuests()
+    for q in quests:
+        print(q.itemList)
