@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-  <title>Tarkov WTC</title>
+     <title>Tarkov WTC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="HTML5 skeleton index.html">
   <meta name="keywords" content="html5,skeleton,index,homepage,jquery,bootstrap">
@@ -43,20 +43,20 @@
       <div class="form-group">
         
         <div class="col-md-8">
-          <label class="checkbox-inline" for="display_options-0">
-            <input type="checkbox" name="display_options" id="show_quests" value="true" onchange="javascript:toggle_show_quests(this.checked);">
+          <label class="checkbox-inline" for="show_quest">
+            <input type="checkbox" id="show_quest" name="display_options" value="true" onchange="javascript:toggle_show_quests(this.checked);">
             Show Quests
           </label>
-          <label class="checkbox-inline" for="display_options-1">
-            <input type="checkbox" name="display_options" id="show_collector" value="true" onchange="javascript:toggle_show_collector(this.checked);">
+          <label class="checkbox-inline" for="show_collector">
+            <input type="checkbox" id="show_collector"  name="display_options" value="true" onchange="javascript:toggle_show_collector(this.checked);">
             Show Collector
           </label>
-          <label class="checkbox-inline" for="display_options-1">
-            <input type="checkbox" name="display_options" id="show_0_remaining" value="true" onchange="javascript:toggle_show_0_remaining(this.checked);">
+          <label class="checkbox-inline" for="show_completed">
+            <input type="checkbox" id="show_completed" name="display_options" value="true" onchange="javascript:toggle_show_0_remaining(this.checked);">
             Show Completed Items
           </label>
-          <label class="checkbox-inline" for="display_options-1">
-            <input type="checkbox" disabled name="display_options" id="show_0_remaining" value="true">
+          <label class="checkbox-inline" for="show_hideout">
+            <input type="checkbox" id="show_hideout" disabled name="display_options" value="true">
             Show Hideout Items
           </label>
         </div>
@@ -69,11 +69,11 @@
     <thead>
         <tr><th>Item name</th><th>Amount to Collect</th></tr>
     </thead>
-    <tbody>
+    </table>
    
-  </div>
 
-
+    </div>
+</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
