@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup as bs
 from Quest import Quest
-import csv, json, getQuest
+import csv, json, getQuest, Collectibles
 
 def generateQuestsFile():
     """This function downloads the .html from the wiki"""
@@ -95,6 +95,12 @@ def defaultOptions() -> str: #return with the default options
     };"""
 
 if __name__ == "__main__":
-    #generateQuestsFile()
+    generateQuestsFile()
     quests = parseQuests()
-    print("Quest have been parsed, now run  -> python Collectibles.py")
+
+    str = Collectibles.generateCollectibles()
+    a = Collectibles.addHeader(str)
+    with open('collectibles.js', 'w', encoding="utf-8") as f:
+        f.write(a)
+        f.close()
+    print("Done")

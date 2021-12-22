@@ -84,7 +84,5 @@ class Quest:
                 if k is not None and v is not None:
                     print(k + v)
 
-
-
     def __str__(self):
         return "Quest: " + self.name.capitalize() + "\nTrader: " + self.trader.capitalize() + "\nObjectiveStr: " + self.objectiveStr
