@@ -59,7 +59,7 @@ for (item in items){ //items == localstorage.items
             background = 'style="background: transparent;"';
         }
 
-        if(options.show_collector == false && 229 in element.quest){
+        if(options.show_collector == false && 243 in element.quest){
             continue; //skip the collector quest
         }else{
             icon = "";
@@ -80,7 +80,7 @@ for (item in items){ //items == localstorage.items
                 + element.amount + "</span></td>" 
                 + "<td>" + haveinInvInput(item) + "</td>"
                 + "<td>" + handedInInput(item) + "</td>"
-                + "</td><td><span id='remaining_" + item.replace(/ /g, "_") + "'>"+ element.remaining +"</span></td></tr>";
+                + "</td><td style=\"text-align: center;\"><span id='remaining_" + item.replace(/ /g, "_") + "'>"+ element.remaining +"</span></td></tr>";
 
 
             if(options.show_quests == true){ //display the quests
@@ -94,7 +94,7 @@ for (item in items){ //items == localstorage.items
                         HTML += `<td></td>`;
 
                     }else{
-                        HTML += `<td><button type='button' class='btn btn-primary btn-sm' id='completebutton_`+q.replace(/ /g, "_")
+                        HTML += `<td style=\"text-align: center;\"><button type='button' class='btn btn-primary btn-sm' id='completebutton_`+q.replace(/ /g, "_")
                             + `' onClick='javascript:markAsCompleteQuest(`+q+`);'>Completed</button></td>` 
 
                     }

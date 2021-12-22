@@ -38,7 +38,7 @@ def addHeader(str):
 def defaultOptions() -> str: #return with the default options
     return """let options = {
     'show_quests' : true,
-    'show_collector' : true,
+    'show_collector' : false,
     'show_0_remaining' : true,
     };"""
 

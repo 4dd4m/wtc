@@ -87,12 +87,13 @@ def parseQuests() -> list:
 
     return questList
 
-def defaultOptions() -> str: #return with the default options
-    return """let options = {
-    'show_quests' : true,
-    'show_collector' : true,
-    'show_0_remaining' : true,
-    };"""
+def generateHideout():
+    """Generating the hideout file"""
+    pass
+
+def parseHideout():
+    """Parsing the hideout file"""
+    pass
 
 if __name__ == "__main__":
     generateQuestsFile()
