@@ -6,27 +6,30 @@ def generateQuestsFile():
     """This function downloads the .html from the wiki"""
     getQuest.getQuestsFile()
 
-def parseQuests() -> list:
-    """Parse the downloaded Quest file"""
-    #quest objects
-    questList = []
-
-    #uquest csv
-    quests = []
+def parseTable(file):
+    """Parse the tables from the provided file"""
 
     #Parse the Wuest File
     try:
-        f = open('Quest.html', "r")
+        f = open(file, "r")
     except FileNotFoundError:
         getQuest.getQuestsFile()
-        f = open('Quest.html', "r")
-    f = open('Quest.html', "r")
+        f = open(file, "r")
+    f = open(file, "r")
 
     soup = bs(f, 'html.parser')
     tables = soup.find_all( class_='wikitable')
+    return tables
+
+def parseQuests(tables):
+    """Parse the Quests from the provided tables"""
+    #iterate the tables
+    #quest objects
+    questList = []
     id=0
 
-    #iterate the tables
+    #uquest csv
+    quests = []
     for table in tables:
         try:
             dealer = table.tbody.tr.th.a.text.lower()
@@ -87,19 +90,20 @@ def parseQuests() -> list:
 
     return questList
 
-def generateHideout():
+def generateHideout(file):
     """Generating the hideout file"""
     pass
 
-def parseHideout():
+def parseHideout(tables):
     """Parsing the hideout file"""
     pass
 
 if __name__ == "__main__":
     generateQuestsFile()
-    quests = parseQuests()
+    quests = parseTable('Quest.html')
+    quest = parseQuests(quests)
 
-    str = Collectibles.generateCollectibles()
+    str = Collectibles.generateCollectibles(quest)
     a = Collectibles.addHeader(str)
     with open('collectibles.js', 'w', encoding="utf-8") as f:
         f.write(a)

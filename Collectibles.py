@@ -1,8 +1,8 @@
 import Quest, build, json
 
-def generateCollectibles():
+def generateCollectibles(questlist):
     """Generate The collectibles JSON"""
-    questList = build.parseQuests()
+    questList = questlist
     collectibleDict = {}
 
     c = 0 #questid
@@ -43,7 +43,9 @@ def defaultOptions() -> str: #return with the default options
     };"""
 
 if __name__ == "__main__":
-    str = generateCollectibles()
+    quests = build.parseTable('Quest.html')
+    quest = build.parseQuests(quests)
+    str = generateCollectibles(quest)
     a = addHeader(str)
     with open('collectibles.js', 'w', encoding="utf-8") as f:
         f.write(a)
