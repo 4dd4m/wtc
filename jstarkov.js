@@ -12,20 +12,20 @@ function init(){
     }
 
     //checking the boxes 
-    if(options.show_quests == true){
-        $('#show_quests').attr('checked',true);
+    if(options.show_quest == true){
+        $('#show_quest').attr('checked',true);
     }else{
-        $('#show_quests').removeAttr('checked',false);
+        $('#show_quest').removeAttr('checked',false);
     }
     if(options.show_collector == true){
         $('#show_collector').attr('checked',true);
     }else{
         $('#show_collector').removeAttr('checked',false);
     }
-    if(options.show_0_remaining == true){
-        $('#show_0_remaining').attr('checked',true);
+    if(options.show_completed == true){
+        $('#show_completed').attr('checked',true);
     }else{
-        $('#show_0_remaining').removeAttr('checked',false);
+        $('#show_completed').removeAttr('checked',false);
     }
 }
 init(); //run the init
@@ -49,7 +49,7 @@ HTML += "<tr style='font-align: center;'><th style='width: 350px;'>Item name (<s
 for (item in items){ //items == localstorage.items
     element = items[item];
 
-    if(element.remaining >= 1 || options.show_0_remaining == true){ 
+    if(element.remaining >= 1 || options.show_completed == true){ 
         //display the row if show0 = true or ramaning > 1
 
 
@@ -83,7 +83,7 @@ for (item in items){ //items == localstorage.items
                 + "</td><td style=\"text-align: center;\"><span id='remaining_" + item.replace(/ /g, "_") + "'>"+ element.remaining +"</span></td></tr>";
 
 
-            if(options.show_quests == true){ //display the quests
+            if(options.show_quest == true){ //display the quests
                 for(q in element.quest){
                     HTML += `<tr ` + background+
                         `><td><span style='margin-left:120px;'><a href='https://escapefromtarkov.gamepedia.com/`+ csv[q][1] +  `'>` + csv[q][1]  +`</a></span><td>` + element.quest[q]+ `</td></td>`
@@ -205,7 +205,7 @@ function saveLocalSotrage(){
 }
 
 function toggle_show_quests(value){
-    options.show_quests = value;
+    options.show_quest = value;
     saveLocalSotrage();
     location.reload();
 }
@@ -216,8 +216,8 @@ function toggle_show_collector(value){
     location.reload();
 }
 
-function toggle_show_0_remaining(value){
-    options.show_0_remaining = value;
+function toggle_show_completed(value){
+    options.show_completed = value;
     saveLocalSotrage();
     location.reload();
 }
