@@ -43,7 +43,7 @@ $('.quests').html(HTML);
 
 //build collectibles table
 var HTML = '';
-HTML += "<tr style='font-align: center;'><th style='width: 350px;'>Item name (<span class='glyphicon glyphicon-ok'></span> FIR | "
+HTML += "<tr style='text-align: center;'><th style='width: 450px;'>Item name (<span class='glyphicon glyphicon-ok'></span> FIR | "
     + "<span class='glyphicon glyphicon-cog'></span> CanBeCrafted | <span class='glyphicon glyphicon-refresh'></span> Barter)</th>"
     + "<th style='width: 20px;'>Total</th><th style='width: 110px;'>Stash</th><th style='width: 110px;'>Turned In</th><th  style='width: 60px;'>Remaining</th></tr>";
 for (item in items){ //items == localstorage.items
@@ -86,7 +86,7 @@ for (item in items){ //items == localstorage.items
             if(options.show_quest == true){ //display the quests
                 for(q in element.quest){
                     HTML += `<tr ` + background+
-                        `><td><span style='margin-left:120px;'><a href='https://escapefromtarkov.gamepedia.com/`+ csv[q][1] +  `'>` + csv[q][1]  +`</a></span><td>` + element.quest[q]+ `</td></td>`
+                        `><td><img style="width: 32px;height: 32px;margin-left:120px;margin-right:16px;border-radius:50%;" src="images/`+csv[q][2]+`.jpg"><span><a href='https://escapefromtarkov.gamepedia.com/`+ csv[q][1] +  `'>` + csv[q][1]  +`</a></span><td>` + element.quest[q]+ `</td></td>`
                         + `<td></td>`
                         + `<td></td>`;
 

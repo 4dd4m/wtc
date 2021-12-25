@@ -30,6 +30,8 @@ def parseQuests(tables):
 
     #uquest csv
     quests = []
+
+    
     for table in tables:
         try:
             dealer = table.tbody.tr.th.a.text.lower()
@@ -71,7 +73,7 @@ def parseQuests(tables):
 
             if questName not in quests:
                 str = 'Quest added'
-                quests.append([id,questName])
+                quests.append([id,questName,dealer.capitalize()])
                 str += (': {}'.format(questName))
 
             if q is not None:

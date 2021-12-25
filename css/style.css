@@ -6,6 +6,7 @@ body{
     line-height: normal;
 }
 
+
 .table>tbody>tr>td{
     vertical-align: middle;
 }
@@ -23,4 +24,5 @@ button, input, optgroup, select, textarea{
 
 .itemstocollect{
     width: 75%;
+    border-collapse: separate;
 }
